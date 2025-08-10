@@ -1,14 +1,18 @@
 class MathController < ApplicationController
-  def home
-    render({ :template => "math_templates/addition" })
+  def homepage
+    render({ :template => "math_templates/homepage" })
   end
 
   def add_results
-    @first_number = params.fetch("first_number").to_f
-    @second_number = params.fetch("second_number").to_f
+    first_number = params.fetch("first_number").to_f
+    second_number = params.fetch("second_number").to_f
 
-    result = @first_number + @second_number
-    @result = result
+    first_number = first_number.to_f
+    second_number = second_number.to_f
+    @first_number = first_number
+    @second_number = second_number
+    @result = @first_number + @second_number
+  
 
     render({ :template => "math_template/add_results" })
   end
