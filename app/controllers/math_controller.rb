@@ -18,7 +18,7 @@ class MathController < ApplicationController
     @result = @first_number + @second_number
   
 
-    render({ :template => "math_template/wizard_add" })
+    render({ :template => "math_templates/wizard_add" })
   end
 
   def subtraction
